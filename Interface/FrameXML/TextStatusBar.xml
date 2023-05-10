@@ -1,0 +1,24 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="TextStatusBar.lua"/>
+	<StatusBar name="TextStatusBar" virtual="true">
+		<Scripts>
+			<OnLoad>
+				TextStatusBar_Initialize();
+			</OnLoad>
+			<OnEvent>
+				TextStatusBar_OnEvent(arg1, arg2);
+			</OnEvent>
+			<OnEnter>
+				TextStatusBar_UpdateTextString();
+				ShowTextStatusBarText(this);
+			</OnEnter>
+			<OnLeave>
+				HideTextStatusBarText(this);
+			</OnLeave>
+			<OnValueChanged>
+				TextStatusBar_OnValueChanged();
+			</OnValueChanged>
+		</Scripts>
+	</StatusBar>
+</Ui>
